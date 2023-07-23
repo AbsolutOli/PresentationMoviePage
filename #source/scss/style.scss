@@ -1,0 +1,19 @@
+@import 'nullstyle.scss';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Josefin Sans';
+    color: #FFF;
+    background-color: black;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+[class*="__container"] {
+    max-width: 112.5rem;
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+}
