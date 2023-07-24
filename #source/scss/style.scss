@@ -41,12 +41,6 @@ body {
     }
 
     &__logo {
-
-        // display: block;
-
-        // img {
-        //     width: 8.22916666667vw; //11.3526570048vw
-        // }
         @media (max-width: 420px) {
             img {
                 height: 1.67411vh;
@@ -98,12 +92,6 @@ body {
                 top: calc(50% - 0.0625rem);
             }
         }
-    }
-
-    &__logo,
-    &__burger-icon {
-        position: relative;
-        z-index: 5;
     }
 
     .menu {
@@ -184,6 +172,85 @@ body {
 
         &::after {
             transform: rotate(-45deg);
+        }
+    }
+}
+
+/*|-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-|*/
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    padding: 0 0 2.66667vh 0;
+
+    &__container {}
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__languages {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            margin: 0 1.8125rem 0 1.3125rem;
+
+            width: 1px;
+            height: 26px;
+            background-color: #FFF;
+
+            @media (max-width: 480px) {
+                height: 13px;
+                margin: 0 0.625rem 0 0.025rem;
+            }
+        }
+    }
+
+    &__button {
+        padding: 10px 0 0 0;
+        font-size: 2.25rem;
+        color: inherit;
+        background-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 0.6188rem;
+
+        @media (max-width: 480px) {
+            font-size: 1.125rem;
+            letter-spacing: 0.6188rem;
+            padding: 0;
+            font-weight: 200;
+        }
+    }
+
+    &__social {
+        height: 38px;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 480px) {
+            height: 16px;
+        }
+    }
+
+    &__link {
+        height: 100%;
+
+        img {
+            height: 100%;
+        }
+
+        &:not(:last-child) {
+            margin: 0 3.9375rem 0 0;
+
+            @media (max-width: 480px) {
+                margin: 0 1.6687rem 0 0;
+            }
         }
     }
 }

@@ -181,10 +181,6 @@ body {
     top: calc(50% - 0.0625rem);
   }
 }
-.header__logo, .header__burger-icon {
-  position: relative;
-  z-index: 5;
-}
 .header .menu {
   position: fixed;
   width: 100%;
@@ -255,4 +251,92 @@ body {
 .header .active .header__burger-icon::after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+/*|-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-|*/
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  padding: 0 0 2.66667vh 0;
+}
+.footer__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__languages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__languages span {
+  margin: 0 1.8125rem 0 1.3125rem;
+  width: 1px;
+  height: 26px;
+  background-color: #FFF;
+}
+@media (max-width: 480px) {
+  .footer__languages span {
+    height: 13px;
+    margin: 0 0.625rem 0 0.025rem;
+  }
+}
+.footer__button {
+  padding: 10px 0 0 0;
+  font-size: 2.25rem;
+  color: inherit;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.6188rem;
+}
+@media (max-width: 480px) {
+  .footer__button {
+    font-size: 1.125rem;
+    letter-spacing: 0.6188rem;
+    padding: 0;
+    font-weight: 200;
+  }
+}
+.footer__social {
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 480px) {
+  .footer__social {
+    height: 16px;
+  }
+}
+.footer__link {
+  height: 100%;
+}
+.footer__link img {
+  height: 100%;
+}
+.footer__link:not(:last-child) {
+  margin: 0 3.9375rem 0 0;
+}
+@media (max-width: 480px) {
+  .footer__link:not(:last-child) {
+    margin: 0 1.6687rem 0 0;
+  }
 }
