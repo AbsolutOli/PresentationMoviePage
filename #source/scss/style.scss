@@ -26,7 +26,11 @@ body {
     left: 0;
     z-index: 50;
     width: 100%;
-    padding: 3.75rem 0;
+    padding: 3.12500vw 0; //3.75rem
+
+    @media (max-width: 420px) {
+        padding: 4.83092vw 0; //3.75rem
+    }
 
     &__container {}
 
@@ -36,7 +40,19 @@ body {
         align-items: center;
     }
 
-    &__logo {}
+    &__logo {
+
+        // display: block;
+
+        // img {
+        //     width: 8.22916666667vw; //11.3526570048vw
+        // }
+        @media (max-width: 420px) {
+            img {
+                height: 1.67411vh;
+            }
+        }
+    }
 
     &__menu {}
 
@@ -45,6 +61,11 @@ body {
         cursor: pointer;
         height: 2.1875rem;
         position: relative;
+
+        @media (max-width: 420px) {
+            height: 1.67411vh;
+            width: 1.5625rem;
+        }
 
         span,
         &::before,
@@ -56,6 +77,10 @@ body {
             background-color: #FFFFFF;
             left: 0;
             transition: transform 0.3s ease 0s, top 0.3s ease 0s;
+
+            @media (max-width: 420px) {
+                height: 0.125rem;
+            }
         }
 
         &::before {
@@ -68,6 +93,10 @@ body {
 
         span {
             top: calc(50% - 3px);
+
+            @media (max-width: 420px) {
+                top: calc(50% - 0.0625rem);
+            }
         }
     }
 
@@ -83,8 +112,13 @@ body {
         height: 100%;
         padding: 24.333333333vh 0 0 0;
         top: 0;
-        left: -100%;
+        left: -150%;
         background-color: rgba(255, 255, 255, 0.338);
+        transition: all 0.3s ease 0s;
+
+        @media (max-width: 480px) {
+            padding: 25.55804vh 0 0 0;
+        }
 
         &__list {
             text-align: center;
@@ -94,15 +128,23 @@ body {
         &__item {
             &:not(:last-child) {
                 margin: 0 0 5.08333333333vh 0;
+
+                @media (max-width: 480px) {
+                    margin: 0 0 5.80357vh 0;
+                }
             }
         }
 
         &__link {
             color: inherit;
             font-weight: 200;
-            font-size: 64px;
+            font-size: 4rem;
             text-transform: uppercase;
             position: relative;
+
+            @media (max-width: 480px) {
+                font-size: 2.25rem;
+            }
 
             &::after {
                 content: '';
@@ -126,7 +168,6 @@ body {
     }
 
     .active .header__burger-icon {
-        transition: all 0.3s ease 0s;
 
         span {
             width: 0;
@@ -134,12 +175,6 @@ body {
 
         &::before,
         &::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 0.375rem;
-            background-color: #FFFFFF;
-            left: 0;
             top: 40%;
         }
 
