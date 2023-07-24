@@ -55,6 +55,7 @@ body {
             height: 0.375rem;
             background-color: #FFFFFF;
             left: 0;
+            transition: transform 0.3s ease 0s, top 0.3s ease 0s;
         }
 
         &::before {
@@ -125,8 +126,10 @@ body {
     }
 
     .active .header__burger-icon {
+        transition: all 0.3s ease 0s;
+
         span {
-            display: none;
+            width: 0;
         }
 
         &::before,

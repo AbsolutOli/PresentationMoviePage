@@ -141,6 +141,10 @@ body {
   height: 0.375rem;
   background-color: #FFFFFF;
   left: 0;
+  -webkit-transition: top 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  transition: top 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, top 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, top 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 .header__burger-icon::before {
   top: 0;
@@ -195,8 +199,12 @@ body {
 .header .active .menu {
   left: 0;
 }
+.header .active .header__burger-icon {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
 .header .active .header__burger-icon span {
-  display: none;
+  width: 0;
 }
 .header .active .header__burger-icon::before, .header .active .header__burger-icon::after {
   content: "";
