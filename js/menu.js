@@ -1,1 +1,1 @@
-document.querySelector('.header__burger-icon').addEventListener('click', (event) => { console.log(event); document.querySelector('.header__body').classList.toggle('active'); }) 
+document.querySelector('.header__burger-icon').addEventListener('click', (event) => { document.querySelector('.header__body').classList.toggle('active'); }) 
