@@ -1,6 +1,19 @@
 @import 'nullstyle.scss';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;600;700&display=swap');
 
+//Mixins
+@mixin pagesSettings ($padtop, $padbot) {
+    visibility: hidden;
+    padding: $padtop 0 $padbot 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+
 body {
     font-family: 'Josefin Sans';
     color: #FFF;
@@ -313,14 +326,15 @@ body {
     &__container {}
 
     &__page {
-        visibility: hidden;
-        padding: 24.3333333333vh 0 17.1666666667vh 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        overflow: hidden;
+        // visibility: hidden;
+        // padding: 24.3333333333vh 0 17.1666666667vh 0;
+        // position: absolute;
+        // width: 100%;
+        // height: 100%;
+        // top: 0;
+        // left: 0;
+        // overflow: hidden;
+        @include pagesSettings(24.3333333333vh, 17.1666666667vh);
 
         @media (max-width: 767.98px) {
             padding: 10.7142857143vh 0 18.5267857143vh 0;
@@ -445,7 +459,7 @@ body {
 .active .start__body>* {
     transform: translate(0, 0);
     opacity: 1;
-    transition: transform 1s ease, opacity 1s ease;
+    transition: transform 0.5s ease, opacity 1s ease;
 }
 
 .active .start__getticket {
