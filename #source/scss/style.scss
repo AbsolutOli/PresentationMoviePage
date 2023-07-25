@@ -249,12 +249,17 @@ body {
     }
 
     &__button {
-        padding: 10px 0 0 0;
+        padding: 5px 0 0 0;
         font-size: 2.25rem;
         color: inherit;
         background-color: transparent;
         text-transform: uppercase;
         letter-spacing: 0.6188rem;
+        transition: transform 0.2s ease 0s;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
 
         @media (max-width: 480px) {
             font-size: 1.125rem;
@@ -279,6 +284,12 @@ body {
 
         img {
             height: 100%;
+        }
+
+        transition: transform 0.2s ease 0s;
+
+        &:hover {
+            transform: translateY(-5px);
         }
 
         &:not(:last-child) {
