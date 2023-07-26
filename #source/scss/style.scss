@@ -70,6 +70,8 @@ body {
     &__start {}
 
     &__trailer {}
+
+    &__about {}
 }
 
 /*|-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-|*/
@@ -741,3 +743,70 @@ body {
 
     }
 }
+
+/*|-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-=ABOUT=-|*/
+.about {
+
+    &__page {
+        @include pagesSettings(17.5vh, 22.5833333333vh);
+
+        background-color: rgb(0, 0, 0, 0.3);
+    }
+
+    &__container {}
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+
+    &__content {
+
+        max-width: 913px;
+
+        &_right {}
+
+        &:nth-child(2) {
+            align-self: flex-end;
+        }
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        margin: 0 0 35px 0;
+
+
+        span {
+            height: 1px;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        &_right {
+            flex-direction: row-reverse;
+            column-gap: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 64px;
+        font-weight: 700;
+        letter-spacing: 17.6px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-size: 24px;
+        font-weight: 200;
+    }
+
+    &__background {}
+}
+
+.active .about__page {
+    visibility: visible;
+}
+
+.__ibg {}
