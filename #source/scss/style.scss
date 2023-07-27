@@ -72,6 +72,8 @@ body {
     &__trailer {}
 
     &__about {}
+
+    &__characters {}
 }
 
 /*|-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-=HEADER=-|*/
@@ -864,4 +866,83 @@ body {
         object-position: 75% 23%;
 
     }
+}
+
+/*|-=CHARACTERS=-=CHARACTERS=-=CHARACTERS=-=CHARACTERS=-=CHARACTERS=-=CHARACTERS=-=CHARACTERS=-=CHARACTERS=-|*/
+.characters {
+
+    &__page {
+        @include pagesSettings(16.1666666667vh, 20.8333333333vh)
+    }
+
+    &__container {}
+
+    &__body {}
+
+    &__slider {}
+}
+
+.slider-characters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__button {
+        background-color: transparent;
+
+        &:last-child {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__content {
+        padding: 0 15px;
+        display: flex;
+        column-gap: 8.59375vw;
+    }
+
+    &__item {
+        position: relative;
+
+        img {
+            opacity: 0.5;
+        }
+    }
+
+    &__name {
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 2rem;
+        letter-spacing: 3.06px;
+        font-weight: 700;
+        text-transform: uppercase;
+        opacity: 0.89;
+    }
+
+    &__background {}
+}
+
+.active .slider-characters__item.active .slider-characters__name {
+    visibility: visible;
+}
+
+.active .slider-characters__item.active img {
+    opacity: 1;
+}
+
+.__ibg {}
+
+.slider-background {
+    opacity: 0;
+}
+
+.active.slider-background {
+    opacity: 1;
+}
+
+
+.active .characters__page {
+    visibility: visible;
 }
