@@ -875,11 +875,81 @@ body {
         @include pagesSettings(16.1666666667vh, 20.8333333333vh)
     }
 
-    &__container {}
+    &__container {
+        height: 100%;
+    }
 
-    &__body {}
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__card {
+        display: none;
+        flex: 1 1 auto;
+    }
 
     &__slider {}
+}
+
+.active.characters__card {
+    display: block;
+}
+
+.card-characters {
+    margin: 0 0 8.9167vh 0;
+
+    &__count {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10.9375vw 0 21.083333vw;
+        font-size: 72px;
+        font-weight: 700;
+        letter-spacing: 19.8px;
+        text-transform: uppercase;
+        margin: 0 0 8.25vh 0;
+    }
+
+    &__chosen-character {}
+
+    &__all-characters {}
+
+    &__info {
+        text-transform: uppercase;
+        max-width: 700px;
+        text-align: center;
+
+        &_right {
+            max-width: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+
+    &__character-name {
+        letter-spacing: 15.6px;
+        font-size: 72px;
+        font-weight: 700;
+
+        &_right {
+            width: 516px;
+            text-align: center;
+        }
+    }
+
+    &__actor-name {
+        letter-spacing: 4.88px;
+        font-size: 48px;
+        font-weight: 400;
+
+        &_right {
+            width: 516px;
+            text-align: center;
+        }
+    }
 }
 
 .slider-characters {
