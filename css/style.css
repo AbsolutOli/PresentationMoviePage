@@ -1191,6 +1191,16 @@ body {
 .slider-characters > .slider-characters__button {
   padding: 0 15px;
 }
+.slider-characters > .slider-characters__button img {
+  -webkit-transition: -webkit-transform 0.2s ease 0s;
+  transition: -webkit-transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+}
+.slider-characters > .slider-characters__button img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 .slider-characters__button {
   background-color: transparent;
 }
@@ -1257,6 +1267,29 @@ body {
     letter-spacing: 2.04px;
   }
 }
+.slider-characters {
+  opacity: 0;
+  -webkit-transform: translate(-100vh, 0);
+          transform: translate(-100vh, 0);
+}
+
+.characters__body > .characters__card {
+  opacity: 0;
+  -webkit-transform: translate(100vh, 0);
+          transform: translate(100vh, 0);
+}
+
+.active .characters__body > .characters__card,
+.active .slider-characters {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: opacity 1s ease 0s, -webkit-transform 0.5s ease 0s;
+  transition: opacity 1s ease 0s, -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, opacity 1s ease 0s;
+  transition: transform 0.5s ease 0s, opacity 1s ease 0s, -webkit-transform 0.5s ease 0s;
+}
+
 .active .slider-characters__item.active .slider-characters__name {
   visibility: visible;
 }
@@ -1284,6 +1317,8 @@ body {
 
 .slider-background {
   opacity: 0;
+  -webkit-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
 }
 
 .active.slider-background {

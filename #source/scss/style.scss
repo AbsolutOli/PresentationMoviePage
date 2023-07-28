@@ -994,6 +994,15 @@ body {
 
     &>&__button {
         padding: 0 15px;
+
+        img {
+            transition: transform 0.2s ease 0s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
     }
 
     &__button {
@@ -1066,6 +1075,26 @@ body {
     &__background {}
 }
 
+//Animation
+.slider-characters {
+    opacity: 0;
+    transform: translate(-100vh, 0);
+}
+
+.characters__body>.characters__card {
+    opacity: 0;
+    transform: translate(100vh, 0);
+}
+
+.active .characters__body>.characters__card,
+.active .slider-characters {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: transform 0.5s ease 0s, opacity 1s ease 0s;
+}
+
+
+
 .active .slider-characters__item.active .slider-characters__name {
     visibility: visible;
 }
@@ -1094,12 +1123,12 @@ body {
 
 .slider-background {
     opacity: 0;
+    transition: opacity 0.3s ease 0s;
 }
 
 .active.slider-background {
     opacity: 1;
 }
-
 
 .active .characters__page {
     visibility: visible;
