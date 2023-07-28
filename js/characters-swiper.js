@@ -5,7 +5,13 @@ const itemCharactersList = document.querySelectorAll('.slider-characters__conten
 const backgroundsList = document.querySelectorAll('.characters__background > *');
 const charactersCardList = document.querySelectorAll('.characters__body > .characters__card');
 
-console.log(charactersCardList);
+const contentSwiper = document.querySelector('.slider-characters__content');
+let contentScrollPosition = 0;
+let stepScrollSize = 190;
+console.log(window.innerWidth)
+if (window.innerWidth < 361) {
+    stepScrollSize = 132;
+}
 
 let activeSlide = 0;
 
@@ -16,9 +22,15 @@ function clickHandler(event) {
     if (event.target.closest('.__left')) {
         if (activeSlide === 0) {
             activeSlide = itemCharactersList.length - 1;
+            contentScrollPosition = stepScrollSize * 3;
+            contentSwiper.scroll(contentScrollPosition, 0);
         } else {
             activeSlide--;
+            contentScrollPosition -= stepScrollSize;
+            contentSwiper.scroll(contentScrollPosition, 0);
         }
+
+        console.log(contentScrollPosition);
 
         itemCharactersList[prevSlide].classList.remove('active');
         backgroundsList[prevSlide].classList.remove('active');
@@ -30,9 +42,15 @@ function clickHandler(event) {
     } else if (event.target.closest('.__right')) {
         if (activeSlide === itemCharactersList.length - 1) {
             activeSlide = 0;
+            contentScrollPosition = 0;
+            contentSwiper.scroll(contentScrollPosition, 0);
         } else {
             activeSlide++;
+            contentScrollPosition += stepScrollSize;
+            contentSwiper.scroll(contentScrollPosition, 0);
         }
+
+        console.log(contentScrollPosition);
 
         itemCharactersList[prevSlide].classList.remove('active');
         backgroundsList[prevSlide].classList.remove('active');

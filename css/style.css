@@ -1100,41 +1100,82 @@ body {
   text-transform: uppercase;
   margin: 0 0 8.25vh 0;
 }
+@media (max-width: 680px) {
+  .card-characters__count {
+    padding: 0 10.9375vw;
+    font-size: 48px;
+    letter-spacing: 6.6px;
+    margin: 0 0 24.25vh 0;
+  }
+}
+@media (max-width: 480px) {
+  .card-characters__count {
+    font-size: 24px;
+    margin: 0 0 24.25vh 0;
+  }
+}
 .card-characters__info {
   text-transform: uppercase;
   max-width: 700px;
   text-align: center;
 }
-.card-characters__info_right {
-  max-width: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+@media (min-width: 480px) {
+  .card-characters__info_right {
+    max-width: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
 }
 .card-characters__character-name {
   letter-spacing: 15.6px;
   font-size: 72px;
   font-weight: 700;
 }
-.card-characters__character-name_right {
-  width: 516px;
-  text-align: center;
+@media (min-width: 480px) {
+  .card-characters__character-name_right {
+    width: 516px;
+    text-align: center;
+  }
+}
+@media (max-width: 680px) {
+  .card-characters__character-name {
+    font-size: 48px;
+    letter-spacing: 10.8px;
+  }
+}
+@media (max-width: 480px) {
+  .card-characters__character-name {
+    font-size: 36px;
+  }
 }
 .card-characters__actor-name {
   letter-spacing: 4.88px;
   font-size: 48px;
   font-weight: 400;
 }
-.card-characters__actor-name_right {
-  width: 516px;
-  text-align: center;
+@media (min-width: 480px) {
+  .card-characters__actor-name_right {
+    width: 516px;
+    text-align: center;
+  }
+}
+@media (max-width: 680px) {
+  .card-characters__actor-name {
+    font-size: 36px;
+  }
+}
+@media (max-width: 480px) {
+  .card-characters__actor-name {
+    font-size: 24px;
+  }
 }
 
 .slider-characters {
@@ -1147,6 +1188,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.slider-characters > .slider-characters__button {
+  padding: 0 15px;
+}
 .slider-characters__button {
   background-color: transparent;
 }
@@ -1155,13 +1199,40 @@ body {
           transform: rotate(180deg);
 }
 .slider-characters__content {
-  padding: 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-column-gap: 8.59375vw;
      -moz-column-gap: 8.59375vw;
           column-gap: 8.59375vw;
+}
+@media (max-width: 360px) {
+  .slider-characters__content img {
+    width: 124px;
+    height: 121px;
+  }
+}
+@media (max-width: 1300px) {
+  .slider-characters__content {
+    -webkit-column-gap: 2.59375vw;
+       -moz-column-gap: 2.59375vw;
+            column-gap: 2.59375vw;
+  }
+}
+@media (max-width: 1300px) {
+  .slider-characters__content {
+    overflow: scroll;
+  }
+}
+.slider-characters__content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.slider-characters__content {
+  -ms-overflow-style: none;
+}
+.slider-characters__content {
+  overflow: -moz-scrollbars-none;
 }
 .slider-characters__item {
   position: relative;
@@ -1180,12 +1251,35 @@ body {
   text-transform: uppercase;
   opacity: 0.89;
 }
+@media (max-width: 360px) {
+  .slider-characters__name {
+    font-size: 1.5rem;
+    letter-spacing: 2.04px;
+  }
+}
 .active .slider-characters__item.active .slider-characters__name {
   visibility: visible;
 }
 
 .active .slider-characters__item.active img {
   opacity: 1;
+}
+
+.characters__background.__ibg img {
+  -o-object-position: 45% 23%;
+     object-position: 45% 23%;
+}
+.characters__background.__ibg img:nth-child(2) {
+  -o-object-position: 52% 23%;
+     object-position: 52% 23%;
+}
+.characters__background.__ibg img:nth-child(3) {
+  -o-object-position: 62% 23%;
+     object-position: 62% 23%;
+}
+.characters__background.__ibg img:nth-child(4) {
+  -o-object-position: 57% 23%;
+     object-position: 57% 23%;
 }
 
 .slider-background {
