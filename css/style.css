@@ -1400,6 +1400,16 @@ body {
             justify-content: center;
   }
 }
+.slider-posters__body > .slider-posters__button img {
+  -webkit-transition: -webkit-transform 0.2s ease 0s;
+  transition: -webkit-transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s;
+  transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+}
+.slider-posters__body > .slider-posters__button img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 .slider-posters__button {
   background-color: transparent;
   margin: 0 5.9895833333vw;
@@ -1469,6 +1479,32 @@ body {
 .slider-posters__indicator {
   font-size: 72px;
   color: #A49C9C;
+}
+
+.slider-posters__body {
+  opacity: 0;
+  -webkit-transform: translate(100vh, 0);
+          transform: translate(100vh, 0);
+}
+
+.slider-posters__indicators {
+  opacity: 0;
+}
+
+.active .slider-posters__indicators {
+  opacity: 1;
+  -webkit-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
+}
+
+.active .slider-posters__body {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: opacity 1s ease, -webkit-transform 0.5s ease;
+  transition: opacity 1s ease, -webkit-transform 0.5s ease;
+  transition: opacity 1s ease, transform 0.5s ease;
+  transition: opacity 1s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .active.slider-posters__poster {

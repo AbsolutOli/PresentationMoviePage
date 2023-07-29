@@ -1191,7 +1191,19 @@ body {
             justify-content: center;
         }
 
+        &>.slider-posters__button {
+            img {
+                transition: transform 0.2s ease 0s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+        }
     }
+
+
 
     &__button {
         background-color: transparent;
@@ -1250,6 +1262,26 @@ body {
         font-size: 72px;
         color: #A49C9C;
     }
+}
+
+.slider-posters__body {
+    opacity: 0;
+    transform: translate(100vh, 0);
+}
+
+.slider-posters__indicators {
+    opacity: 0;
+}
+
+.active .slider-posters__indicators {
+    opacity: 1;
+    transition: opacity 1.5s ease;
+}
+
+.active .slider-posters__body {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: opacity 1s ease, transform 0.5s ease;
 }
 
 .active.slider-posters__poster {
