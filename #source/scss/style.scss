@@ -243,7 +243,13 @@ body {
     width: 100%;
     bottom: 12.0833333333vh;
     left: 0;
-    z-index: 50;
+    z-index: 40;
+
+    @media (max-width: 780px) {
+        overflow-x: scroll;
+        height: 83px;
+        bottom: 6vh;
+    }
 
     &__list {
         display: flex;
@@ -257,19 +263,35 @@ body {
             left: -20vh;
             bottom: 0;
             background-color: #FFF;
+
+            @media (max-width: 570px) {
+                width: 1060px;
+            }
         }
     }
 
     &__container {}
 
     &__item {
-        flex: 0 1 20%;
+        flex: 0 0 20%;
         position: relative;
         padding-bottom: 38px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        @media (max-width: 780px) {
+            flex: 0 0 160px;
+        }
+
+        @media (max-height: 880px) {
+            padding-bottom: 32px;
+        }
+
+        @media (max-width: 970px) {
+            padding-bottom: 32px;
+        }
 
 
         &::after {
@@ -280,6 +302,18 @@ body {
             border-radius: 50%;
             bottom: -6px;
             background-color: #FFF;
+
+            @media (max-height: 880px) {
+                width: 7px;
+                height: 7px;
+                bottom: -3.5px;
+            }
+
+            @media (max-width: 970px) {
+                width: 7px;
+                height: 7px;
+                bottom: -3.5px;
+            }
         }
 
         &::before {
@@ -291,6 +325,18 @@ body {
             bottom: -32px;
             background-color: transparent;
             border: 1px solid #FFF;
+
+            @media (max-height: 880px) {
+                width: 40px;
+                height: 40px;
+                bottom: -20px;
+            }
+
+            @media (max-width: 970px) {
+                width: 40px;
+                height: 40px;
+                bottom: -20px;
+            }
         }
     }
 
@@ -301,6 +347,16 @@ body {
         letter-spacing: 6.6px;
         text-transform: uppercase;
         opacity: 0;
+
+        @media (max-height: 880px) {
+            font-size: 18px;
+            letter-spacing: 4.95px;
+        }
+
+        @media (max-width: 970px) {
+            font-size: 18px;
+            letter-spacing: 4.95px;
+        }
     }
 }
 
@@ -413,14 +469,19 @@ body {
 .start {
     &__background {}
 
-    &__container {}
+    &__container {
+        flex: 1 1 auto;
+    }
 
     &__page {
-        @include pagesSettings(24.3333333333vh, 17.1666666667vh);
+        @include pagesSettings(0, 0);
 
         @media (max-width: 767.98px) {
             padding: 10.7142857143vh 0 18.5267857143vh 0;
         }
+
+        display: flex;
+        align-items: center;
     }
 
     &__body {
@@ -609,8 +670,11 @@ body {
 .trailer {
 
     &__page {
-        @include pagesSettings(43.25vh, 38.75vh);
+        @include pagesSettings(0, 0);
         backdrop-filter: blur(5px);
+
+        display: flex;
+        align-items: center;
 
         @media (max-width: 1600px) {
             padding: 31.25vh 0 31.75vh 0;
@@ -621,12 +685,8 @@ body {
         }
 
         @media (max-width: 830px) {
-            padding: 14.25vh 0 15.75vh 0;
+            padding: 8.25vh 0 15.75vh 0;
             background-color: rgb(0, 0, 0, 0.4);
-        }
-
-        @media (max-width: 830px) {
-            padding: 21.25vh 0 15.75vh 0;
         }
 
         @media (max-height: 670px) {
@@ -634,7 +694,9 @@ body {
         }
     }
 
-    &__container {}
+    &__container {
+        flex: 1 1 auto;
+    }
 
     &__body {
         display: flex;
@@ -682,10 +744,10 @@ body {
             }
         }
 
-        @media (max-width: 600px) {
-            height: 443px;
-            width: 323px;
-            grid-template-rows: repeat(3, 115px);
+        @media (max-width: 380px) {
+            height: 357px;
+            width: 272px;
+            grid-template-rows: repeat(3, 90px);
         }
     }
 
@@ -792,6 +854,10 @@ body {
         @media (max-width: 830px) {
             font-size: 3rem;
         }
+
+        @media (max-width: 600px) {
+            font-size: 2rem;
+        }
     }
 
     &__background {}
@@ -834,9 +900,12 @@ body {
 .about {
 
     &__page {
-        @include pagesSettings(17.5vh, 22.5833333333vh);
+        @include pagesSettings(0, 0);
 
         background-color: rgb(0, 0, 0, 0.3);
+
+        display: flex;
+        align-items: center;
 
         @media (max-width: 991.98px) {
             background-color: rgb(0, 0, 0, 0.6);
@@ -849,10 +918,11 @@ body {
         @media (max-width: 370px) {
             padding: 8.5vh 0 10.583333vh 0;
         }
-
     }
 
-    &__container {}
+    &__container {
+        flex: 1 1 auto;
+    }
 
     &__body {
         display: flex;
@@ -860,6 +930,10 @@ body {
         row-gap: 2rem;
 
         @media (max-width: 380px) {
+            row-gap: 1rem;
+        }
+
+        @media (max-height: 680px) {
             row-gap: 1rem;
         }
     }
@@ -895,6 +969,10 @@ body {
         @media (max-width: 380px) {
             margin: 0 0 10px 0;
         }
+
+        @media (max-height: 680px) {
+            margin: 0 0 10px 0;
+        }
     }
 
     &__title {
@@ -905,6 +983,10 @@ body {
 
         @media (max-width: 700px) {
             font-size: 24px;
+        }
+
+        @media (max-height: 680px) {
+            font-size: 18px;
         }
     }
 
@@ -918,6 +1000,10 @@ body {
 
         @media (max-width: 380px) {
             font-size: 17px;
+        }
+
+        @media (max-height: 680px) {
+            font-size: 14px;
         }
     }
 
@@ -1005,6 +1091,10 @@ body {
         @media (max-width: 480px) {
             font-size: 24px;
             margin: 0 0 24.25vh 0;
+        }
+
+        @media (max-height: 680px) {
+            margin: 0 0 14.25vh 0;
         }
     }
 
@@ -1098,7 +1188,6 @@ body {
     }
 
     &__content {
-
         display: flex;
         column-gap: 8.59375vw;
 
@@ -1260,6 +1349,10 @@ body {
         @media (max-width: 480px) {
             font-size: 36px;
             margin: 0 0 15vh 0;
+        }
+
+        @media (max-height: 680px) {
+            margin: 0 0 5vh 0;
         }
     }
 

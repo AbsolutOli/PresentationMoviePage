@@ -11,6 +11,7 @@ let activePage = 0;
 let previousPage;
 
 let scrollTime = 0;
+let scrollStep = 0;
 
 function scrollItem(event) {
     scrollTime++;
@@ -55,6 +56,12 @@ function nextPage() {
 
     allMenuStateBars[previousPage].classList.remove('active');
     allMenuStateBars[activePage].classList.add('active');
+
+
+    if (scrollStep < 100 * 5) {
+        scrollStep += 130;
+    }
+    document.querySelector('.menu-state-bar').scroll(scrollStep, 0);
 }
 
 function prevPage() {
@@ -62,6 +69,14 @@ function prevPage() {
     activePage--
     allPages[previousPage].classList.remove('active');
     allPages[activePage].classList.add('active');
+
     allMenuStateBars[previousPage].classList.remove('active');
     allMenuStateBars[activePage].classList.add('active');
+
+
+
+    if (scrollStep > 0) {
+        scrollStep -= 130;
+    }
+    document.querySelector('.menu-state-bar').scroll(scrollStep, 0);
 }
