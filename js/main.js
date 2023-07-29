@@ -4,6 +4,7 @@ window.addEventListener('touchend', swipeItemEnd);
 
 
 const allPages = document.querySelectorAll('.main > *');
+const allMenuStateBars = document.querySelectorAll('.menu-state-bar__list>*');
 
 
 let activePage = 0;
@@ -51,6 +52,9 @@ function nextPage() {
     //console.log(`previousPage: ${previousPage} \n activePage: ${activePage}`);
     allPages[previousPage].classList.remove('active');
     allPages[activePage].classList.add('active');
+
+    allMenuStateBars[previousPage].classList.remove('active');
+    allMenuStateBars[activePage].classList.add('active');
 }
 
 function prevPage() {
@@ -58,4 +62,6 @@ function prevPage() {
     activePage--
     allPages[previousPage].classList.remove('active');
     allPages[activePage].classList.add('active');
+    allMenuStateBars[previousPage].classList.remove('active');
+    allMenuStateBars[activePage].classList.add('active');
 }
