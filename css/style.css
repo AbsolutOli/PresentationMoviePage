@@ -292,6 +292,93 @@ body {
           transform: rotate(-45deg);
 }
 
+/*|-=MENU-STATE-BAR=-=MENU-STATE-BAR=-=MENU-STATE-BAR=-=MENU-STATE-BAR=-=MENU-STATE-BAR=-=MENU-STATE-BAR=-|*/
+.menu-state-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 12.0833333333vh;
+  left: 0;
+  z-index: 50;
+}
+.menu-state-bar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.menu-state-bar__list::after {
+  content: "";
+  position: absolute;
+  width: 200vw;
+  height: 1px;
+  left: -20vh;
+  bottom: 0;
+  background-color: #FFF;
+}
+.menu-state-bar__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  position: relative;
+  padding-bottom: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.menu-state-bar__item::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  bottom: -6px;
+  background-color: #FFF;
+}
+.menu-state-bar__item::before {
+  content: "";
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  bottom: -32px;
+  background-color: transparent;
+  border: 1px solid #FFF;
+}
+.menu-state-bar__link {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: 6.6px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.menu-state-bar__item::before {
+  opacity: 0;
+}
+
+.active.menu-state-bar__item::before {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.active .menu-state-bar__link {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
 /*|-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-=FOOTER=-|*/
 .footer {
   position: fixed;
