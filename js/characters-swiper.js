@@ -8,7 +8,6 @@ const charactersCardList = document.querySelectorAll('.characters__body > .chara
 const contentSwiper = document.querySelector('.slider-characters__content');
 let contentScrollPosition = 0;
 let stepScrollSize = 190;
-console.log(window.innerWidth)
 if (window.innerWidth < 361) {
     stepScrollSize = 132;
 }

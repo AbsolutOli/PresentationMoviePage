@@ -1140,17 +1140,23 @@ body {
     &__page {
         @include pagesSettings(9.16666666667vh, 18vh);
 
-        background-color: rgb(0, 0, 0, 0.3)
+        background-color: rgb(0, 0, 0, 0.3);
+
+        display: flex;
+        align-items: center;
     }
 
     &__container {}
 
     &__body {
         max-width: 800px;
+        height: 63.5833333333vh;
         margin: 0 auto;
     }
 
-    &__slider {}
+    &__slider {
+        height: 100%;
+    }
 
     &__background {}
 }
@@ -1159,6 +1165,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 47.583333vh;
 
     &__number {
         text-shadow: 7px 6px 13px 0px rgba(0, 0, 0, 0.20);
@@ -1167,16 +1174,32 @@ body {
         font-size: 72px;
         font-weight: 700;
         margin: 0 0 48px 0;
+
+        @media (max-width: 480px) {
+            font-size: 36px;
+            margin: 0 0 15vh 0;
+        }
     }
 
     &__body {
         display: flex;
         align-items: center;
+        height: 100%;
+
+        @media (max-width: 480px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
     }
 
     &__button {
         background-color: transparent;
         margin: 0 5.98958333333vw;
+
+        @media (max-width: 480px) {
+            order: 2;
+        }
 
         &:last-child {
             transform: rotate(180deg);
@@ -1185,25 +1208,42 @@ body {
 
     &__content {
         display: flex;
+        height: 100%;
+
+        @media (max-width: 480px) {
+            flex: 1 1 100%;
+            justify-content: center;
+            height: 78%;
+        }
     }
 
     &__poster {
         margin: 0 0 44px 0;
         position: relative;
+        height: 100%;
 
         img {
+            display: none;
+            height: 100%;
             position: absolute;
-            top: 50px;
-            right: -80px;
+            top: 7%;
+            right: -5vh;
             transform: scale(0.8);
             box-shadow: 16px 10px 13px 0px rgba(0, 0, 0, 0.30);
             opacity: 0;
+
+            @media (max-width: 620px) {
+                top: 1%;
+                right: -5vh;
+                transform: scale(0.65);
+            }
         }
     }
 
     &__indicators {
         display: flex;
         column-gap: 35px;
+        padding-bottom: 30px;
     }
 
     &__indicator {
@@ -1216,6 +1256,7 @@ body {
     z-index: 1;
 
     img {
+        display: block;
         position: relative;
         top: 0;
         left: 0;
@@ -1223,11 +1264,17 @@ body {
         max-width: 537px;
         transform: scale(1);
         opacity: 1;
+
+        @media (max-width: 620px) {
+            max-width: 223px;
+            max-height: 279px;
+        }
     }
 }
 
 .next {
     img {
+        display: block;
         opacity: 1;
     }
 }
@@ -1242,4 +1289,11 @@ body {
 
 .__ibg {}
 
-.posters-slider-background {}
+.posters-slider-background {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.active.posters-slider-background {
+    opacity: 1;
+}
