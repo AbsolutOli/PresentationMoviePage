@@ -5,13 +5,40 @@ window.addEventListener('touchend', swipeItemEnd);
 
 const allPages = document.querySelectorAll('.main > *');
 const allMenuStateBars = document.querySelectorAll('.menu-state-bar__list>*');
+const menuItems = document.querySelectorAll('.menu__list .menu__link');
 
+document.querySelector('.menu__list').addEventListener('click', menuClick);
 
 let activePage = 0;
 let previousPage;
 
 let scrollTime = 0;
 let scrollStep = 0;
+
+function menuClick(event) {
+    if (event.target.classList.contains('menu__link')) {
+        event.preventDefault();
+
+        menuItems.forEach((item, index) => {
+            if (item === event.target) {
+                menuClicklEvent(index);
+            }
+        })
+    }
+}
+
+function menuClicklEvent(index) {
+    previousPage = activePage;
+    activePage = index;
+
+    allPages[previousPage].classList.remove('active');
+    allPages[activePage].classList.add('active');
+
+    allMenuStateBars[previousPage].classList.remove('active');
+    allMenuStateBars[activePage].classList.add('active');
+
+    document.querySelector('.header__body').classList.toggle('active');
+}
 
 function scrollItem(event) {
     scrollTime++;

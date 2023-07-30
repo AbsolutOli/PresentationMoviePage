@@ -249,6 +249,11 @@ body {
         overflow-x: scroll;
         height: 83px;
         bottom: 6vh;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
     }
 
     &__list {
@@ -933,7 +938,7 @@ body {
             row-gap: 1rem;
         }
 
-        @media (max-height: 680px) {
+        @media (max-height: 890px) {
             row-gap: 1rem;
         }
     }
@@ -970,7 +975,7 @@ body {
             margin: 0 0 10px 0;
         }
 
-        @media (max-height: 680px) {
+        @media (max-height: 890px) {
             margin: 0 0 10px 0;
         }
     }
@@ -985,7 +990,7 @@ body {
             font-size: 24px;
         }
 
-        @media (max-height: 680px) {
+        @media (max-height: 890px) {
             font-size: 18px;
         }
     }
@@ -1002,7 +1007,7 @@ body {
             font-size: 17px;
         }
 
-        @media (max-height: 680px) {
+        @media (max-height: 750px) {
             font-size: 14px;
         }
     }
